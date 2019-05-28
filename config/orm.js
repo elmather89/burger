@@ -43,16 +43,16 @@ function objToSql(ob) {
 // insertOne()
 // updateOne()
 var orm = {
-    selectAll: function(tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            cb (result);
+            cb(result);
         });
     },
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -64,14 +64,14 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, vals, function (err, result) {
             if (err) {
                 throw err;
             }
-            cb (result);
+            cb(result);
         });
     },
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -81,27 +81,28 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            cb (result);
+            cb(result);
         });
     },
-    deleteOne: function(table, condition, cb) {
+    deleteOne: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
 
         queryString += " WHERE ";
         queryString += condition;
 
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            cb (result);
+            cb(result);
         });
     }
 };
 
 // Export the ORM object in module.exports.
 module.exports = orm;
+console.log("orm.js connected");

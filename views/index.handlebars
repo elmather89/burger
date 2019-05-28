@@ -2,16 +2,16 @@
 
 <h2>Order a Burger!</h2>
 <ul>
-    {{ #each burgers }}
-    {{ #unless devoured }}
-    {{ /unless }}
-    {{ /each }}
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{/unless}}
+    {{/each}}
 </ul>
 
 <h2>Devoured Burgers</h2>
 <ul>
-    {{ #each burgers }}
-    {{ #if devoured }}
-    {{ /if }}
-    {{ /each }}
+    {{#each burgers}}
+    {{#if devoured}}
+    {{/if}}
+    {{/each}}
 </ul>

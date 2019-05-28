@@ -11,14 +11,16 @@ var burger = require("../models/burger.js");
 // Create the router for the app =============
 var router = express.Router();
 
+console.log("controllers connected");
+
 // get =======================================
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
         var hbsObject = {
             burgers: data
         };
-
         console.log(hbsObject);
+        console.log("/ working");
         res.render("index", hbsObject);
     });
 });
