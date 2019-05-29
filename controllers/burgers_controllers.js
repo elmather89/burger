@@ -6,10 +6,9 @@
 // Express
 // burger.js
 var express = require("express");
-var burger = require("../models/burger.js");
-
-// Create the router for the app =============
 var router = express.Router();
+
+var burger = require("../models/burger.js");
 
 console.log("controllers connected");
 
@@ -20,7 +19,6 @@ router.get("/", function(req, res) {
             burgers: data
         };
         console.log(hbsObject);
-        console.log("/ working");
         res.render("index", hbsObject);
     });
 });
@@ -28,9 +26,9 @@ router.get("/", function(req, res) {
 // post =======================================
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-        "name"
+        "burger_name", "devoured"
     ], [
-        req.body.name
+        req.body.burger_name, req.body.devoured
     ], function(result) {
         res.json({ id: result.insertId });
     });

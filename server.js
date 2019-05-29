@@ -16,7 +16,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Static directory to be served
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 // Routes
 // =============================================================

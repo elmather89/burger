@@ -14,14 +14,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/controllers/burgers_controllers.js"></script>
+    <script src="/public/assets/js/burgerApp.js"></script>
 
     <title>Eat the Burger</title>
 
 </head>
 
 <body>
-    {{{ body }}}
+
+    {{!-- nav  --}}
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Burger Time!</a>
+        </div>
+    </nav>
+
+    {{!-- main --}}
+    <div class="container">
+
+        {{!-- db --}}
+        <div class="row">
+            <div class="col s12">
+                {{{ body }}}
+            </div>
+        </div>
+
+        {{!-- new burger form --}}
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" id="add-burger" class="validate">
+                <label for="add-burger">Add a burger...</label>
+                <button id="new-burger"></button>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

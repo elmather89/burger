@@ -1,7 +1,7 @@
 // Create an orm.js file inside config directory.
 
 // Import (require) connection.js into orm.js
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
 // sql injection protection
 function questionMarks(num) {
