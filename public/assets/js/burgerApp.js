@@ -1,5 +1,13 @@
 $(function() {
+
     $("#new-burger").on("click", function(event) {
-        console.log("clicked");
+        event.preventDefault();
+
+        var newBurg = {
+            burger_name: $("#add-burger").val().trim(),
+            devoured: false
+        }
     });
+
+    
 });
