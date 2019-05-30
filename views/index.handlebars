@@ -3,6 +3,11 @@
     {{#each burgers}}
     {{#unless devoured}}
     <li> #{{this.id}} - {{this.burger_name}} </li>
+    <button class="change-state" data-id="{{id}}" data-newstate="{{devoured}}">
+        {{#if devoured}}
+        {{else}}DEVOUR THIS BURGER!
+        {{/if}}
+    </button>
     {{/unless}}
     {{/each}}
 </ul>
