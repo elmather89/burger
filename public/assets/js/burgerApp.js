@@ -5,10 +5,10 @@ $(function () {
         var id = $(this).data("id");
         var newDevour = $(this).data("newstate");
 
-        var newDevourState = { devoured: newDevour };
+        var newDevourState = { devoured: 1 };
 
         // PUT request
-        $.ajax("/api/burgers" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newDevourState
         }).then(function() {
@@ -17,6 +17,7 @@ $(function () {
         });
     });
 
+    // add new burger
     $("#new-burger").on("click", function (event) {
         event.preventDefault();
 
@@ -31,6 +32,21 @@ $(function () {
             data: newBurg
         }).then(function() {
             console.log("new burger added");
+            location.reload();
+        });
+    });
+
+    // delete burger
+    $(".delete-burger").on("click", function(event) {
+        event.preventDefault();
+
+        var id = $(this).data("id");
+
+        // DELETE request
+        $.ajax({
+            type: "DELETE",
+            url: "/api/burgers/" +id
+        }).then(function() {
             location.reload();
         });
     });

@@ -11,7 +11,7 @@ body {
 
 .brand-logo {
     font-family: 'EB Garamond', serif;
-    font-size: 50px !important;
+    font-size: 40px !important;
     margin-bottom: 10px;
 }
 
@@ -31,4 +31,22 @@ h2 {
 .btn-large i {
     font-size: 14px;
     text-transform: none;
+}
+
+li {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.change-state {
+    font-size: 12px;
+}
+
+.border {
+    border-bottom: #1D1416 solid 3px;
+    margin: 20px;
+}
+
+.main-div {
+    margin-bottom: 20px;
 }
