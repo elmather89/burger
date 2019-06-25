@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS `burgers`;
+
+CREATE TABLE `burgers` (
+  `id` INT(10) NOT NULL AUTO_INCREMENT,
+  `burger_name` VARCHAR(50) NOT NULL,
+  `devoured` TINYINT(1) DEFAULT '0',
+  `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  
+  PRIMARY KEY (`id`)
+);
